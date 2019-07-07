@@ -1,3 +1,19 @@
+.form {
+  width: calc(100vw - 300px);
+  float: left;
+  position: relative;
+  top: 60px;
+  padding: 50px 20px;
+  &__input {
+    margin-bottom: 30px;
+  }
+}
+
+select {
+  display: block;
+}
+
 .submit-btn {
-  margin: 8px 0 0 5px;
+  width: 250px;
+  margin: 15px 0 0 250px;
 }

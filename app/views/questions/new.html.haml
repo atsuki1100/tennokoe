@@ -1,11 +1,15 @@
-.content
+.form
   =form_for '@question', url: { :controller => :questions, :action => :create } do |f|
     .form__input
+      = f.label '解決したいこと'
       = f.text_area :title, class: 'form-message', placeholder: '入力してください', size: "100x5"
     .form__input
+      = f.label '自分で調べた内容'
       = f.text_area :body, class: 'form-message', placeholder: '入力してください', size: "100x5"
     .form__input
+      = f.label '仮説と検証作業の結果'
       = f.text_area :result, class: 'form-message', placeholder: '入力してください', size: "100x5"
     .form__category
-      = f.collection_select :name, @categorys, :id, :name, :include_blank => true
+      = f.label 'カテゴリー'
+      = f.collection_select :name, @categorys, :id, :name, :include_blank => true, class: 'cate'
     = f.submit '質問する!!', class: 'submit-btn'

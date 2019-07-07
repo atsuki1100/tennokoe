@@ -51,16 +51,20 @@ header {
       }
     }
   }
-  .question_btn {
+  .rec {
+    display: block;
     position: fixed;
-    top: 100px;
-    right: 330px;
+    color: white;
+    text-align: center;
+    bottom: 50px;
+    right: 360px;
     height: 100px;
-    width: 130px;
+    width: 200px;
     z-index: 2;
-    .rec {
-      // margin
-    }
+    background-color: rgb(0, 0, 255);
+    padding: 40px 30px;
+    text-decoration: none;
+    border-radius: 60px;
   }
 }
 

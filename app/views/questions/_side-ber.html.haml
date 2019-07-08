@@ -1,8 +1,8 @@
 .side-ber
   -if user_signed_in?
     .user_nav-grid-6
+      = link_to "自分の情報", '/', class: 'myname'
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "out"
-      %a.post{ :href => '/comments/new'} 記事投稿
   -else
     .gird-6
       = link_to "ログイン", new_user_session_path, class: "post"

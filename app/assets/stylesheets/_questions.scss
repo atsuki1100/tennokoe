@@ -3,6 +3,7 @@
 }
 
 header {
+  font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
   height: 60px;
   width: 100vw;
   position: fixed;
@@ -26,6 +27,7 @@ header {
   top: 60px;
   height: 100%;
   .view {
+    font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
     padding: 30px;
     width: 100%;
     text-align: center;
@@ -35,7 +37,8 @@ header {
     background: linear-gradient(-520deg, rgba(201, 255, 251, 0.904), rgba(247, 253, 255, 0.904), rgba(255, 255, 151, 0.904));
     h4 {
       position: relative;
-      left: 160px;
+      left: 180px;
+      margin-right: 150px;
     }
   }
   .questions {
@@ -81,5 +84,13 @@ header {
   right: 0;
   top: 60px;
   float: left;
+  .myname {
+    display: block;
+    text-decoration: none;
+  }
+  .out {
+    display: block;
+    text-decoration: none;
+  }
 }
 

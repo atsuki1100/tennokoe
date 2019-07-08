@@ -2,8 +2,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label 'ニックネーム' :nickname %><br />
-    <%= f.email_field :nickname, autofocus: true, autocomplete: "nickname" %>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
   </div>
 
   <div class="field">
@@ -27,7 +27,6 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-  <% end %>
+<% end %>
 
-  <%= render "users/shared/links" %>
-
+<%= render "devise/shared/links" %>

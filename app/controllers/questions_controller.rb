@@ -4,13 +4,18 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @user = current_user
   end
 
   def show
   end
 
   def new
-    @question = Question.new
+    if user_signed_in?
+      @question = Question.new
+    else
+      redirect_to 'new_user_session_path'
+    end
   end
 
   def create

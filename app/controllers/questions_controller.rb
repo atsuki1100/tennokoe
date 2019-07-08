@@ -4,22 +4,24 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    @user = current_user
+    @user = User.all
   end
 
   def show
+    @question = Question.find(params[:id])
+    @user = @question.user
   end
 
   def new
     if user_signed_in?
       @question = Question.new
     else
-      redirect_to 'new_user_session_path'
+      redirect_to '/users/sign_in'
     end
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = @user.questions.new(question_params)
     @question.save
     redirect_to '/'
   end
@@ -40,7 +42,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:@question).permit(:title, :body, :result)
+    params.require(:@question).permit(:title, :body, :result).merge(user_id: current_user.id)
   end
 
   def set_user

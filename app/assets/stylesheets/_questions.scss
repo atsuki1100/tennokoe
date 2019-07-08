@@ -41,6 +41,7 @@ header {
       margin-right: 150px;
     }
   }
+
   .questions {
     width: 100%;
     height: 100%;
@@ -48,11 +49,17 @@ header {
     position: relative;
     top: 96px;
     .question {
+      text-decoration: none;
+      height: 60px;
       margin: 0 auto 30px;
       padding: 0 auto;
       overflow: scroll;
       &__text {
         word-break: break-all;
+        float: left;
+      }
+      &__user {
+        float: right;
       }
     }
   }
@@ -87,10 +94,12 @@ header {
   .myname {
     display: block;
     text-decoration: none;
+    float: left;
   }
   .out {
     display: block;
     text-decoration: none;
+    float: right;
   }
 }
 

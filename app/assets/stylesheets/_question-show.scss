@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.content-show {
+  width: calc(100vw - 300px);
+  float: left;
+  position: relative;
+  top: 60px;
+  height: 100%;
+  .view {
+    font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    right: 300px;
+    z-index: 1;
+    background: linear-gradient(-520deg, rgba(201, 255, 251, 0.904), rgba(247, 253, 255, 0.904), rgba(255, 255, 151, 0.904));
+    h4 {
+      position: relative;
+      left: 180px;
+      margin-right: 150px;
+    }
+  }
+}
+
+.usersquestion {
+  width: 100%;
+  height: 100%;
+  padding: 40px 60px;
+  position: relative;
+  top: 96px;
+}

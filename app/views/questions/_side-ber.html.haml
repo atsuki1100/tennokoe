@@ -1,7 +1,7 @@
 .side-ber
   -if user_signed_in?
     .user_nav-grid-6
-      = link_to "自分の情報", '/', class: 'myname'
+      = link_to "マイページ", '/users/:id', class: 'myname'
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "out"
   -else
     .gird-6

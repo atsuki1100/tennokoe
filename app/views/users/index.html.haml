@@ -10,7 +10,3 @@
           = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
   .question_btn
     =link_to "助けを求める！!", new_question_path, class: 'rec'
-
-%h1 = #{@user.nickname}
--@questions.each do |question|
-  #{question.title}

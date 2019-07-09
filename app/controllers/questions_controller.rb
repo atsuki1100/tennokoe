@@ -21,9 +21,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @user.questions.new(question_params)
-    @question.save
-    redirect_to '/'
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to '/'
+    else
+      aler("残念ですが質問できませんでした。自力で頑張りましょう。ｵﾜﾀ!^^")
+      redirect_to '/'
+    end
   end
 
   def edit

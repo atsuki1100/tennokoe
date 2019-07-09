@@ -57,6 +57,9 @@ header {
       &__text {
         word-break: break-all;
         float: left;
+        .question__title {
+          color: rgb(110, 110, 110);
+        }
       }
       &__user {
         float: right;

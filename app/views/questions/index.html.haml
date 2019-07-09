@@ -11,7 +11,7 @@
             -if question.user.id != current_user.id
               = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
             -else 
-              #{question.user.nickname}(あなたです)
+              %p.que-myname #{question.user.nickname}(あなたです)
           -else
             = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
   .question_btn

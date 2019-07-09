@@ -7,6 +7,7 @@
         .question__text
           =link_to "#{question.title}", question_path(question.id), method: :get, class: 'question__title' 
         .question__user
-          = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+          %p.que-name #{question.user.nickname}
+          -# = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
   .question_btn
     =link_to "助けを求める！!", new_question_path, class: 'rec'

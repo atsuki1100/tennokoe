@@ -11,6 +11,6 @@
         #post-font= @question.result
     .answers
       %h5.comment-nal ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!!
-      =form_for '@answer' do |f|
+      =form_for [@question, @answer] do |f|
         =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
         =f.submit "ON", class: 'submit-btn'

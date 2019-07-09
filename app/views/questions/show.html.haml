@@ -14,7 +14,7 @@
       .answers-show
         .answer-user
           -if answer.user_id != current_user.id
-            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+            = link_to "#{@question.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
             %br/
           -else 
             %p.answer-que-myname 質問者

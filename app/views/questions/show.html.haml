@@ -12,15 +12,16 @@
     %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
     -@question.answers.each do |answer|
       .answers-show
+        .answer-user
+          -if answer.user_id != current_user.id
+            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+            %br/
+          -else 
+            %p.answer-que-myname 質問者
         .heaven-voice
           = answer.body
-        .answer_user
-          -if answer.user_id != current_user.id
-            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'myname'
-          -else 
-            %p.que-myname 質問者
-    .answer-form
-      %h5.comment-nal ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!!
-      =form_for [@question, @answer] do |f|
-        =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
-        =f.submit "ON", class: 'submit-btn'
+  .answer-form-gun
+    %h5.comment-nal ~ ~ ~ ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!! ~ ~ ~ ~ ~
+    =form_for [@question, @answer] do |f|
+      =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
+      =f.submit "ON", class: 'submit-btn'

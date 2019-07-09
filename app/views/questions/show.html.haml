@@ -1,25 +1,26 @@
 .content-show
   .view 
     %h4 質問の詳細
-  .usersquestion
-    .usersquestion__body
-      .question-title
-        #post-font= @question.title
-      .question-body
-        #post-font= @question.body
-      .question-result
-        #post-font= @question.result
-    .answers
-      %h5 天の声一覧
-      -@question.answers.each do |answer|
-        .answers__show
-          %p.heaven-voice= answer.body
+  .usersquestion__body
+    .question-title
+      #post-font= @question.title
+    .question-body
+      #post-font= @question.body
+    .question-result
+      #post-font= @question.result
+  .answers
+    %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
+    -@question.answers.each do |answer|
+      .answers-show
+        .heaven-voice
+          = answer.body
+        .answer_user
           -if answer.user_id != current_user.id
-            = link_to "#{answer.user.nickname}", users_path(question.user.id), class: 'myname'
+            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'myname'
           -else 
-            %p.que-myname #{answer.user.nickname}(あなたです)
-      .answer-form
-        %h5.comment-nal ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!!
-        =form_for [@question, @answer] do |f|
-          =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
-          =f.submit "ON", class: 'submit-btn'
+            %p.que-myname 質問者
+    .answer-form
+      %h5.comment-nal ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!!
+      =form_for [@question, @answer] do |f|
+        =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
+        =f.submit "ON", class: 'submit-btn'

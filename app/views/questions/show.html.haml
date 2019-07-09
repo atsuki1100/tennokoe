@@ -2,9 +2,15 @@
   .view 
     %h4 質問の詳細
   .usersquestion
-    .question-title
-      #post-font= @question.title
-    .question-body
-      #post-font= @question.body
-    .question-result
-      #post-font= @question.result
+    .usersquestion__body
+      .question-title
+        #post-font= @question.title
+      .question-body
+        #post-font= @question.body
+      .question-result
+        #post-font= @question.result
+    .answers
+      %h5.comment-nal 天の声を授ける
+      =form_for '@answer' do |f|
+        =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
+        =f.submit "ON", class: 'submit-btn'

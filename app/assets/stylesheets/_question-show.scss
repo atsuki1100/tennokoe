@@ -31,8 +31,20 @@
   padding: 40px 60px;
   position: relative;
   top: 96px;
+  .usersquestion__body {
+    margin-bottom: 25px;
+  }
+  .comment-nal {
+  }
+  .answer-form {
+    display: block;
+  }
+  .submit-btn {
+    display: block;
+  }
 }
 
 #post-font {
   color: rgb(110, 110, 110);
 }
+

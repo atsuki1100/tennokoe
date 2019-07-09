@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   root 'questions#index'
 
-  devise_for :users
-  resources :questions
   resources :users
+  resources :questions do
+    resources :answers, onry: [:create]
+  end
 end

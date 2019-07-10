@@ -3,11 +3,15 @@
     %h4 質問の詳細
   .usersquestion__body
     .question-title
+      %h6.question-form-rec 解決したいこと
       #post-font= @question.title
     .question-body
+      %h6.question-form-rec 自分で調べた内容
       #post-font= @question.body
     .question-result
+      %h6.question-form-rec 仮説と検証作業の結果
       #post-font= @question.result
+    .question__time #{@question.created_at.strftime('%Y/%m/%d %H:%M')}
   .answers
     %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
     -@question.answers.each do |answer|
@@ -19,7 +23,7 @@
           -elsif answer.user_id == current_user.id
             %p.answer-is-current_user #{current_user.nickname}(あなたです)
           -else 
-            %p.answer-que-myname 質問者様(#{answer.user.nickname})
+            %p.answer-que-myname #{answer.user.nickname}(質問者様)
         .heaven-voice
           = answer.body
   .answer-form-gun

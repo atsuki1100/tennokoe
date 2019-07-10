@@ -32,6 +32,11 @@
   position: relative;
   top: 96px;
   margin-bottom: 30px;
+  .question__time {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  }
 }
 
 .answers {
@@ -55,7 +60,7 @@
       display: block;
     }
     .answer-is-current_user {
-      color: greenyellow;
+      color: rgb(139, 218, 21);
     }
   }
 }

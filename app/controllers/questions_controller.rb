@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_user, 
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order("id DESC")
     @user = User.all
   end
 

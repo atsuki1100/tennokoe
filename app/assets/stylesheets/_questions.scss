@@ -45,7 +45,7 @@ header {
   .questions {
     width: 100%;
     height: 100%;
-    padding: 40px 60px;
+    padding: 40px 60px 150px;
     position: relative;
     top: 96px;
     .question {
@@ -97,12 +97,10 @@ header {
   .myname {
     display: block;
     text-decoration: none;
-    float: left;
   }
   .out {
     display: block;
     text-decoration: none;
-    float: right;
   }
 }
 

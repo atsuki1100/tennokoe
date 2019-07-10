@@ -49,25 +49,44 @@ header {
     position: relative;
     top: 96px;
     .question {
+      position: relative;
       text-decoration: none;
-      height: 60px;
+      height: 200px;
       margin: 0 auto 30px;
-      padding-top: 15px;
-      padding-left: 10px;
+      padding-left: 30px;
       padding-right: 10px;
       border-top: dashed 5px rgb(255, 213, 134);
       border-bottom: dashed 5px rgb(255, 213, 134);
       background-color: rgb(255, 242, 219);
-      // overflow: scroll;
+      overflow: scroll;
       &__text {
-        word-break: break-all;
+        word-break: normal;
+        padding-top: 15px;
+        width: 800px;
+        height: 100%;
         float: left;
+        border-right: ridge 5px rgb(255, 244, 214);
+        .question-helpman{
+          width: 160px;
+          background-color: rgb(228, 190, 213);
+          margin: 0 0;
+          color: yellow;
+          font-size: 200%;
+          font-weight: 6;
+          transform: rotate(-10deg);
+          position: relative;
+          left: -35px;
+          top: -15px;
+        }
         .question__title {
           color: rgb(110, 110, 110);
         }
       }
       &__user {
         float: right;
+        width: 160px;
+        word-break: break-all;
+        padding-top: 15px;
       }
     }
   }

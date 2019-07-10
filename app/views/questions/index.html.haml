@@ -5,6 +5,7 @@
     -@questions.each do |question|
       .question
         .question__text
+          %p.question-helpman \^∆^/help~!!
           =link_to "#{question.title}", question_path(question.id), method: :get, class: 'question__title'
         .question__user
           -if user_signed_in?

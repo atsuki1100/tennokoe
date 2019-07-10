@@ -11,6 +11,7 @@
     .question-db
       %h6.question-form-rec 仮説と検証作業の結果
       #post-font= @question.result
+    = link_to "#{@question.user.nickname}さんのページはこちら", users_path(@question.user.id), class: 'querstion-host'
     %p.question__time #{@question.created_at.strftime('%Y年%m月%d日 %H:%M')}
   .answers
     %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~

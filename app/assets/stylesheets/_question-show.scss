@@ -8,6 +8,7 @@
   position: relative;
   top: 60px;
   height: 100%;
+  background-color: rgb(255, 255, 230);
   .view {
     font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
     padding: 30px;
@@ -33,6 +34,7 @@
   top: 96px;
   margin: 30px 0;
   border: ridge 20px rgb(244, 255, 83);
+  background-color: rgb(255, 244, 226);
   .question-db {
     margin-bottom: 50px;
     .question-form-rec {
@@ -43,6 +45,12 @@
       color: rgb(110, 110, 110);
       font-size: 110%;
     }
+  }
+  .querstion-host {
+    display: block;
+    margin-right: 550px;
+    position: relative;
+    top: 30px;
   }
   .question__time {
     position: absolute;
@@ -71,6 +79,7 @@
     margin-top: 70px;
     width: 100%;
     border: dotted #ffe600;
+    background-color: rgb(255, 244, 226);
     .answer-myname {
       display: block;
     }
@@ -88,6 +97,7 @@
   top: 96px;
   margin-bottom: 30px;
   display: block;
+  background-color: rgb(255, 255, 230);
   .answer-form {
     display: block;
     position: relative;

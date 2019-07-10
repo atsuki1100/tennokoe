@@ -2,16 +2,16 @@
   .view 
     %h4 質問の詳細
   .usersquestion__body
-    .question-title
-      %h6.question-form-rec 解決したいこと
+    .question-db
+      %h6.question-form-rec 解決したいこと &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
       #post-font= @question.title
-    .question-body
-      %h6.question-form-rec 自分で調べた内容
+    .question-db
+      %h6.question-form-rec 自分で調べた内容 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
       #post-font= @question.body
-    .question-result
-      %h6.question-form-rec 仮説と検証作業の結果
+    .question-db
+      %h6.question-form-rec 仮説と検証作業の結果 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
       #post-font= @question.result
-    .question__time #{@question.created_at.strftime('%Y/%m/%d %H:%M')}
+    %p.question__time #{@question.created_at.strftime('%Y/%m/%d %H:%M')}
   .answers
     %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
     -@question.answers.each do |answer|

@@ -13,11 +13,13 @@
     -@question.answers.each do |answer|
       .answers-show
         .answer-user
-          -if answer.user_id != current_user.id
+          -if @question.user_id != answer.user.id && answer.user_id != current_user.id
             = link_to "#{@question.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
             %br/
+          -elsif answer.user_id == current_user.id
+            %p.answer-is-current_user #{current_user.nickname}(あなたです)
           -else 
-            %p.answer-que-myname 質問者
+            %p.answer-que-myname 質問者様(#{answer.user.nickname})
         .heaven-voice
           = answer.body
   .answer-form-gun

@@ -3,15 +3,15 @@
     %h4 質問の詳細
   .usersquestion__body
     .question-db
-      %h6.question-form-rec 解決したいこと &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
+      %h6.question-form-rec 解決したいこと
       #post-font= @question.title
     .question-db
-      %h6.question-form-rec 自分で調べた内容 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
+      %h6.question-form-rec 自分で調べた内容
       #post-font= @question.body
     .question-db
-      %h6.question-form-rec 仮説と検証作業の結果 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(o_o)/ﾀｽｹﾃ!!!!
+      %h6.question-form-rec 仮説と検証作業の結果
       #post-font= @question.result
-    %p.question__time #{@question.created_at.strftime('%Y/%m/%d %H:%M')}
+    %p.question__time #{@question.created_at.strftime('%Y年%m月%d日 %H:%M')}
   .answers
     %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
     -@question.answers.each do |answer|

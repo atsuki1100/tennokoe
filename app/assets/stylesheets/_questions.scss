@@ -52,8 +52,13 @@ header {
       text-decoration: none;
       height: 60px;
       margin: 0 auto 30px;
-      padding: 0 auto;
-      overflow: scroll;
+      padding-top: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-top: dashed 5px rgb(255, 213, 134);
+      border-bottom: dashed 5px rgb(255, 213, 134);
+      background-color: rgb(255, 242, 219);
+      // overflow: scroll;
       &__text {
         word-break: break-all;
         float: left;

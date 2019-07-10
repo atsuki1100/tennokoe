@@ -61,7 +61,7 @@ header {
       background-color: rgb(255, 242, 219);
       overflow: scroll;
       &__text {
-        word-break: normal;
+        word-break: break-all;
         padding-top: 15px;
         width: 800px;
         height: 100%;

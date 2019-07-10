@@ -4,13 +4,13 @@
   .usersquestion__body
     .question-db
       %h6.question-form-rec 解決したいこと
-      #post-font= @question.title
+      #post-font= simple_format(@question.title)
     .question-db
       %h6.question-form-rec 自分で調べた内容
-      #post-font= @question.body
+      #post-font= simple_format(@question.body)
     .question-db
       %h6.question-form-rec 仮説と検証作業の結果
-      #post-font= @question.result
+      #post-font= simple_format(@question.result)
     = link_to "#{@question.user.nickname}さんのページはこちら", users_path(@question.user.id), class: 'querstion-host'
     %p.question__time #{@question.created_at.strftime('%Y年%m月%d日 %H:%M')}
   .answers
@@ -26,7 +26,7 @@
           -else 
             %p.answer-que-myname #{answer.user.nickname}(質問者様)
         .heaven-voice
-          = answer.body
+          = simple_format(answer.body)
   .answer-form-gun
     %h5.comment-nal ~ ~ ~ ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!! ~ ~ ~ ~ ~
     =form_for [@question, @answer] do |f|

@@ -6,7 +6,7 @@
       .question
         .question__text
           %p.question-helpman \^∆^/help~!!
-          =link_to "#{question.title}", question_path(question.id), method: :get, class: 'question__title' 
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title' 
         .question__user
           %p.que-myname #{question.user.nickname}
           -# = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'

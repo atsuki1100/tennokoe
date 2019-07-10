@@ -41,5 +41,6 @@
       .rogin-anauns
         %p.no-rogin-answer ログインしないと回答できないよ！！
         %p.no-rogin-answer 新規登録してみんなを助けてあげよう!!
-        = link_to "※新規登録はこちらをクリック", new_user_registration_path, class: "post"
+        = link_to "※ログインはこちらをクリック", new_user_session_path, class: "post-answer-no-login"
+        = link_to "※新規登録はこちらをクリック", new_user_registration_path, class: "post-answer-no-login"
       

@@ -1,6 +1,6 @@
 .content-show
   .view 
-    %h4 #{@question.user.nickname}さんを助けてあげて！
+    %h4 #{@question.user.nickname}さんを助けてあげて！！
   .usersquestion__body
     .question-db
       %h6.question-form-rec 解決したいこと
@@ -19,7 +19,7 @@
       .answers-show
         .answer-user
           -if @question.user_id != answer.user.id && answer.user_id != current_user.id
-            = link_to "#{@question.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
             %br/
           -elsif answer.user_id == current_user.id
             %p.answer-is-current_user #{current_user.nickname}(あなたです)

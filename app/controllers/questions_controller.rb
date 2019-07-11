@@ -1,10 +1,10 @@
 class QuestionsController < ApplicationController
-  before_action :set_categorys, only: [:new, :create, :edit, :update]
   before_action :set_user, 
 
   def index
     @questions = Question.all.order("id DESC")
     @user = User.all
+    @categorys = Category.all
   end
 
   def show
@@ -23,10 +23,10 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    binding.pry
     if @question.save
       redirect_to '/'
     else
-      aler("残念ですが質問できませんでした。自力で頑張りましょう。ｵﾜﾀ!^^")
       redirect_to '/'
     end
   end
@@ -42,12 +42,8 @@ class QuestionsController < ApplicationController
 
   private
 
-  def set_categorys
-    @categorys = Category.all
-  end
-
   def question_params
-    params.require(:@question).permit(:title, :body, :result).merge(user_id: current_user.id)
+    params.require(:@question).permit(:title, :body, :result, :category_id).merge(user_id: current_user.id)
   end
 
   def set_user

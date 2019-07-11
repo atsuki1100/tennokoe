@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, onry: [:create]
   end
+  resources :categorys, onry: [:show]
 end

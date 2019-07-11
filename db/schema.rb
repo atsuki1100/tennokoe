@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_011426) do
+ActiveRecord::Schema.define(version: 2019_07_10_075239) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "body"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_07_09_011426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_questions_on_category_id"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,4 +90,5 @@ ActiveRecord::Schema.define(version: 2019_07_09_011426) do
   add_foreign_key "answers", "users"
   add_foreign_key "category_questions", "categories"
   add_foreign_key "category_questions", "questions"
+  add_foreign_key "questions", "categories"
 end

@@ -35,7 +35,17 @@
   margin: 30px 0;
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
+  .questionsCategory {
+    .questionsCategory__nal {
+      float: left;
+    }
+    .questionsCategory__text {
+      display: block;
+      float: left;
+    }
+  }
   .question-db {
+    clear: both;
     margin-bottom: 50px;
     .question-form-rec {
       font-size: 150%;

@@ -7,3 +7,10 @@
     .gird-6
       = link_to "ログイン", new_user_session_path, class: "post"
       = link_to "新規登録", new_user_registration_path, class: "post"
+
+  -if @categorys.present?
+    %ul.category-selection
+      %p.category-nal カテゴリー
+      =link_to "全て", "/", class: "category-min" 
+      -@categorys.each do |category|
+        =link_to "#{category.name}", category_path(category.id), class: "category-min" 

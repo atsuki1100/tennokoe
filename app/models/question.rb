@@ -5,6 +5,6 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :answers
 
-  has_many :categorys, through: :category_questions
-  has_many :category_questions
+  belongs_to :category
+  # has_many :category_questions
 end

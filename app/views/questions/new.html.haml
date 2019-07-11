@@ -11,5 +11,5 @@
       = f.text_area :result, class: 'form-message', placeholder: '入力してください', size: "100x5"
     .form__category
       = f.label 'カテゴリー'
-      = f.collection_select :name, @categorys, :id, :name, :include_blank => true, class: 'cate'
+      = f.collection_select :category_id, @categorys, :id, :name, class: 'cate'
     = f.submit '質問する!!', class: 'submit-btn'

@@ -1,6 +1,6 @@
 .content
   .view 
-    %h4 質問投稿一覧
+    %h4 質問投稿一覧 (#{@cate.name})
   .questions
     -@category.each do |question|
       .question

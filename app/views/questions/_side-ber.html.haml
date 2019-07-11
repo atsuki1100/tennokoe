@@ -10,7 +10,7 @@
 
   -if @categorys.present?
     %ul.category-selection
-      %p.category-nal カテゴリー
+      %p.category-nal みんなの質問カテゴリー
       =link_to "全て", "/", class: "category-min" 
       -@categorys.each do |category|
         =link_to "#{category.name}", category_path(category.id), class: "category-min" 

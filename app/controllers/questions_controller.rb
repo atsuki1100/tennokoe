@@ -38,6 +38,12 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    question = Question.find(params[:id])
+    binding.pry
+    if question.user.id == current_user.id
+      question.destroy
+      redirect_to '/', alert: '削除?'
+    end
   end
 
   private

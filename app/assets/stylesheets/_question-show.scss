@@ -36,12 +36,22 @@
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
   .questionsCategory {
-    .questionsCategory__nal {
+    &__nal {
       float: left;
     }
-    .questionsCategory__text {
+    &__text {
       display: block;
       float: left;
+    }
+    &__del {
+      display: block;
+      float: right;
+      color: rgb(238, 238, 238);
+      border: double 2px rgb(0, 0, 0);
+      padding: 2px;
+      background-color: rgb(250, 0, 0);
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
   .question-db {

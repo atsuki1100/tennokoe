@@ -5,6 +5,8 @@
     .questionsCategory
       %p.questionsCategory__nal カテゴリー： 
       =link_to "#{@question.category.name}", category_path(@question.category.id), class: "questionsCategory__text"
+      -if @question.user.id == current_user.id
+        =link_to "削除", question_path(@question), class: "questionsCategory__del", method: :delete, data: {confirm: "削除しますか？"} 
     .question-db
       %h6.question-form-rec 解決したいこと
       #post-font= simple_format(@question.title)

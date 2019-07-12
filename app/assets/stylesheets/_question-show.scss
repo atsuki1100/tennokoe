@@ -107,6 +107,13 @@
     .answer-is-current_user {
       color: rgb(139, 218, 21);
     }
+    .like-count {
+      float: right;
+      position: relative;
+      left:3px;
+      bottom: 34.7px;
+      color: gray;
+    }
     .like-btn {
       color: #8899a6;
       display: block;

@@ -107,6 +107,20 @@
     .answer-is-current_user {
       color: rgb(139, 218, 21);
     }
+    .like-btn {
+      color: #8899a6;
+      display: block;
+      float: right;
+      position: relative;
+      bottom: 30px;
+    }
+    .like-btn-unlike {
+      color: #ff2581;
+      display: block;
+      float: right;
+      position: relative;
+      bottom: 30px;
+    }
     .heaven-voice {
       word-break: break-all;
     }

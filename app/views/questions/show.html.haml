@@ -5,8 +5,9 @@
     .questionsCategory
       %p.questionsCategory__nal カテゴリー： 
       =link_to "#{@question.category.name}", category_path(@question.category.id), class: "questionsCategory__text"
-      -if @question.user.id == current_user.id
-        =link_to "削除", question_path(@question), class: "questionsCategory__del", method: :delete, data: {confirm: "削除しますか？"} 
+      -if user_signed_in?
+        -if @question.user.id == current_user.id
+          =link_to "削除", question_path(@question), class: "questionsCategory__del", method: :delete, data: {confirm: "削除しますか？"} 
     .question-db
       %h6.question-form-rec 解決したいこと
       #post-font= simple_format(@question.title)
@@ -26,11 +27,29 @@
           -if user_signed_in?
             -if @question.user_id != answer.user.id && answer.user_id != current_user.id
               = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                  %span.fa.fa-heart.like-btn
               %br/
             -elsif answer.user_id == current_user.id
               %p.answer-is-current_user #{current_user.nickname}(あなたです)
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                  %span.fa.fa-heart.like-btn
             -else 
               %p.answer-que-myname #{answer.user.nickname}(質問者様)
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                  %span.fa.fa-heart.like-btn
           -else
             = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
 

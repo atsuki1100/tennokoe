@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_075239) do
+ActiveRecord::Schema.define(version: 2019_07_12_004438) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "body"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_07_10_075239) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_category_questions_on_category_id"
     t.index ["question_id"], name: "index_category_questions_on_question_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_likes_on_answer_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,5 +99,7 @@ ActiveRecord::Schema.define(version: 2019_07_10_075239) do
   add_foreign_key "answers", "users"
   add_foreign_key "category_questions", "categories"
   add_foreign_key "category_questions", "questions"
+  add_foreign_key "likes", "answers"
+  add_foreign_key "likes", "users"
   add_foreign_key "questions", "categories"
 end

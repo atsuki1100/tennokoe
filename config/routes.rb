@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :questions do
-    resources :answers, onry: [:create]
+    resources :answers, onry: [:create] do
+      resources :likes, onry: [:create, :destroy]
+    end
   end
   resources :categorys, onry: [:show]
 end

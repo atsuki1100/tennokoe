@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
+    @answers = @user.answers.order("id DESC").page(params[:page]).per(20)
   end
 
   def create

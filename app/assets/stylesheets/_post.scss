@@ -1,8 +1,12 @@
+.megami {
+  height: 500px;
+  background-image: url(megami.jpg)
+}
 .form {
   width: calc(100vw - 300px);
   float: left;
   position: relative;
-  top: 60px;
+  // top: 60px;
   padding: 50px 150px;
   background-color: rgb(255, 255, 230);
   &__input {

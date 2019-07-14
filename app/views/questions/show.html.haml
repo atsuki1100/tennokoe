@@ -29,35 +29,34 @@
               = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
               - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
                 %span.like-count #{answer.likes.count}
-                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
                   %span.fa.fa-heart.like-btn-unlike
               - else
                 %span.like-count #{answer.likes.count}
-                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
                   %span.fa.fa-heart.like-btn
               %br/
             -elsif answer.user_id == current_user.id
               %p.answer-is-current_user #{current_user.nickname}(あなたです)
               - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
                 %span.like-count #{answer.likes.count}
-                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
                   %span.fa.fa-heart.like-btn-unlike
               - else
                 %span.like-count #{answer.likes.count}
-                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
                   %span.fa.fa-heart.like-btn
             -else 
               %p.answer-que-myname #{answer.user.nickname}(質問者様)
               - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
                 %span.like-count #{answer.likes.count}
-                = link_to  question_answer_like_path(@question.id, answer.id), method: :delete do
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
                   %span.fa.fa-heart.like-btn-unlike
               - else
                 %span.like-count #{answer.likes.count}
-                = link_to question_answer_likes_path(@question.id, answer.id), method: :post do
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
                   %span.fa.fa-heart.like-btn
           -else
-            %span.like-count #{answer.likes.count}
             = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
 
         .heaven-voice

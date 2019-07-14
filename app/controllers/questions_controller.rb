@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_user, 
 
   def index
-    @questions = Question.all.order("id DESC")
+    @questions = Question.all.order("id DESC").page(params[:page]).per(20)
     @user = User.all
     @categorys = Category.all
   end
@@ -23,9 +23,11 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    binding.pry
     if @question.save
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to '/'}
+        format.json
+      end
     else
       redirect_to '/'
     end

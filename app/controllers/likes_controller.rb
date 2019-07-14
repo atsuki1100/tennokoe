@@ -6,7 +6,11 @@ class LikesController < ApplicationController
     @like = Like.new(user_id: current_user.id, answer_id: params[:answer_id])
     @like.save
     @likes = Like.where(answer_id: params[:answer_id])
-    redirect_back(fallback_location: root_path)
+    
+    respond_to do |format|
+      format.html {redirect_back(fallback_location: root_path)}
+      format.json
+    end
   end
 
   def destroy

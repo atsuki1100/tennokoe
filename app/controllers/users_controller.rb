@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @nickname = current_user.nickname
+    @user = User.find(params[:id])
     @questions = Question.where(user_id: current_user.id).order("id DESC")
     @categorys = Category.all
   end

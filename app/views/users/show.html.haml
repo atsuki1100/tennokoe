@@ -2,6 +2,16 @@
   .view 
     %h4 マイページ(#{current_user.nickname})
   .questions
+    .user_data
+      .o-name お名前
+      %p.user_data__nickname #{@user.nickname}
+      .o-hitokoto 一言メッセージ
+      -if @user.hitokoto != nil
+        .user_data__hitokoto= ("#{@user.hitokoto.comment}")
+        .user_data__hitokoto--edit= link_to "編集する", edit_user_hitokoto_path(current_user.id, @user.hitokoto.id), method: :get
+      -else 
+        %p.user_data__hitokoto 一言コメントはまだありません
+        .user_data__hitokoto--edit= link_to "編集する", new_user_hitokoto_path(current_user.id), method: :get
     -@questions.each do |question|
       .question
         .question__text

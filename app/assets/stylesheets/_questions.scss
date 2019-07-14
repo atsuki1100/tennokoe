@@ -90,6 +90,14 @@ header {
         padding-top: 15px;
       }
     }
+    .pagenation {
+      .page.current {
+        margin: 0 1px;
+      }
+      .page {
+        margin: 0 1px;
+      }
+    }
   }
   .rec {
     display: block;

@@ -47,11 +47,20 @@
     right: -18px;
     top: -50px;
     border-radius: 200px;
+
+    transform: rotate(0);
+    transition: transform .5s;
+
     &__mark {
       position:relative;
       top: 78px;
     }
   }
+
+  .nikoniko:hover { 
+    transform: rotate(-720deg); 
+  }
+
   .questionsCategory {
     &__nal {
       float: left;

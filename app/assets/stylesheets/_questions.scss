@@ -40,6 +40,10 @@ header {
       left: 230px;
       margin-right: 200px;
     }
+    input {
+      display: block;
+      float: right;
+    }
   }
 
   .questions {
@@ -81,6 +85,8 @@ header {
         }
         .question__title {
           color: rgb(110, 110, 110);
+          font-size: 120%;
+          font-weight: 450;
         }
       }
       &__user {

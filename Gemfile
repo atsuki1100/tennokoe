@@ -68,3 +68,4 @@ gem "jquery-rails"
 gem 'bootstrap'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
+gem "font-awesome-rails"

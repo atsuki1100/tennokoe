@@ -1,5 +1,9 @@
 class AnswersController < ApplicationController
-  before_action :set_question
+  before_action :set_question, only: [:create]
+
+  def index
+    @user = User.find(params[:user_id])
+  end
 
   def create
     @answer = @question.answers.new(answer_params)

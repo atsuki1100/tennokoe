@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   resources :users do
+    resources :answers, only: [:index]
     resources :hitokoto
   end
   resources :questions do
-    resources :answers, onry: [:create] do
-      resources :likes, onry: [:create, :destroy]
+    resources :answers, only: [:create] do
+      resources :likes, only: [:create, :destroy]
     end
   end
-  resources :categorys, onry: [:show]
+  resources :categorys, only: [:show]
 end

@@ -1,0 +1,20 @@
+.content
+  .view 
+    %h4 #{@user.nickname}さんの回答した質問一覧
+  .questions
+    -@answers.each do |answer|
+      .question
+        .question__text
+          %p.question-helpman \^∆^/help~!!
+          =link_to simple_format("#{answer.question.title}"), question_path(answer.question.id), method: :get, class: 'question__title'
+        .question__user
+          -if user_signed_in?
+            -if answer.question.user.id != current_user.id
+              = link_to "#{answer.question.user.nickname}", users_path(answer.question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{answer.question.user.nickname}(あなたです)
+          -else
+            = link_to "#{answer.question.user.nickname}", users_path(answer.question.user.id), class: 'myname'
+    = paginate(@answers)
+  .question_btn
+    =link_to "助けを求める！!", new_question_path, class: 'rec'

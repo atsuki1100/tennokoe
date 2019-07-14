@@ -1,0 +1,30 @@
+.megami {
+  height: 500px;
+  background-image: url(megami.jpg)
+}
+.form {
+  width: calc(100vw - 300px);
+  float: left;
+  position: relative;
+  // top: 60px;
+  padding: 50px 150px;
+  background-color: rgb(255, 255, 230);
+  &__input {
+    margin-bottom: 30px;
+    .sss {
+      display: block;
+    }
+    .form-message {
+      display: block;
+    }
+  }
+}
+
+select {
+  display: block;
+}
+
+.submit-btn {
+  width: 250px;
+  margin: 15px 0 0 250px;
+}

@@ -1,0 +1,5 @@
+class Hitokoto < ApplicationRecord
+
+  belongs_to :user
+
+end

@@ -1,0 +1,39 @@
+.content
+  .view 
+    %h4 マイページ(#{current_user.nickname})
+  .questions
+    .user_data
+      .user_data__name
+        .o-name お名前
+        .user_data__name--nickname #{@user.nickname}
+      .user_data__hitokoto
+        .o-hitokoto ひとことメッセージ
+        -if @user.hitokoto != nil
+          .user_data__hitokoto--comment= simple_format("#{@user.hitokoto.comment}")
+          .user_data__hitokoto--edit= link_to "ひとことを編集する", edit_user_hitokoto_path(current_user.id, @user.hitokoto.id), method: :get
+        -else 
+          .user_data__hitokoto--comment 一言コメントはまだありません
+          .user_data__hitokoto--edit= link_to "ひとことを編集する", new_user_hitokoto_path(current_user.id), method: :get
+      .user_data__question
+        .user_data__question--nul 質問した数
+        .user_data__question--count= @user.questions.count
+      .user_data__answer
+        .user_data__answer--nul 回答した数
+        =link_to "#{@user.answers.count}", user_answers_path(@user), class: 'user_data__answer--count'
+      .user_data__like
+        .user_data__like--nul いいねした数
+        .user_data__like--count= @user.likes.count
+      .user_data__liked
+        -liked_count = 0
+        -@user.answers.each do |answer|
+          -liked_count += answer.likes.count
+        .user_data__liked--nul いいねされた数
+        .user_data__liked--count= liked_count
+    -@questions.each do |question|
+      .question
+        .question__text
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title' 
+        .question__user
+          =question.user.nickname
+  .question_btn
+    =link_to "助けを求める！!", new_question_path, class: 'rec'

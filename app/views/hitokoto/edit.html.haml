@@ -1,0 +1,5 @@
+.content
+  =form_for '@hitokoto', url: { :controller => :hitokoto, :action => :update },  method: :patch do |f|
+    =f.label 'ひとことメッセージ' ,class: 'hito_messe'
+    =f.text_area :comment, class: 'form-hitokoto', placeholder: '入力してください(200文字以内)', size: "100x10", maxlength: "200"
+    =f.submit '更新する', class: 'hitokoto-submit-btn'

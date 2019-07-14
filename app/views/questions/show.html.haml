@@ -1,0 +1,76 @@
+.content-show
+  .view 
+    %h4 #{@question.user.nickname}さんを助けてあげて！！
+  .usersquestion__body
+    .questionsCategory
+      %p.questionsCategory__nal カテゴリー： 
+      =link_to "#{@question.category.name}", category_path(@question.category.id), class: "questionsCategory__text"
+      -if user_signed_in?
+        -if @question.user.id == current_user.id
+          =link_to "削除", question_path(@question), class: "questionsCategory__del", method: :delete, data: {confirm: "削除しますか？"} 
+    .question-db
+      %h6.question-form-rec 解決したいこと
+      #post-font= simple_format(@question.title)
+    .question-db
+      %h6.question-form-rec 自分で調べた内容
+      #post-font= simple_format(@question.body)
+    .question-db
+      %h6.question-form-rec 仮説と検証作業の結果
+      #post-font= simple_format(@question.result)
+    = link_to "#{@question.user.nickname}さんのページはこちら", users_path(@question.user.id), class: 'querstion-host'
+    %p.question__time #{@question.created_at.strftime('%Y年%m月%d日 %H:%M')}
+  .answers
+    %h5.tenkoeitiran ~ ~ 天の声一覧 ~ ~
+    -@question.answers.each do |answer|
+      .answers-show
+        .answer-user
+          -if user_signed_in?
+            -if @question.user_id != answer.user.id && answer.user_id != current_user.id
+              = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                %span.like-count #{answer.likes.count}
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                %span.like-count #{answer.likes.count}
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
+                  %span.fa.fa-heart.like-btn
+              %br/
+            -elsif answer.user_id == current_user.id
+              %p.answer-is-current_user #{current_user.nickname}(あなたです)
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                %span.like-count #{answer.likes.count}
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                %span.like-count #{answer.likes.count}
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
+                  %span.fa.fa-heart.like-btn
+            -else 
+              %p.answer-que-myname #{answer.user.nickname}(質問者様)
+              - if Like.find_by(user_id: current_user.id, answer_id: answer.id)
+                %span.like-count #{answer.likes.count}
+                = link_to  question_answer_like_path(@question.id, answer.id), class: 'unlibtn', id: "#{answer.id}", method: :delete do
+                  %span.fa.fa-heart.like-btn-unlike
+              - else
+                %span.like-count #{answer.likes.count}
+                = link_to question_answer_likes_path(@question.id, answer.id), class: 'libtn', id: "#{answer.id}", method: :post do
+                  %span.fa.fa-heart.like-btn
+          -else
+            = link_to "#{answer.user.nickname}", users_path(answer.user.id), class: 'answer-myname'
+
+        .heaven-voice
+          = simple_format(answer.body)
+  .answer-form-gun
+    %h5.comment-nal ~ ~ ~ ~ ~ 天の声を授ける ~ ~ \^v^/ﾀｽｹﾙﾖ!! ~ ~ ~ ~ ~
+    -if user_signed_in?
+      =form_for [@question, @answer] do |f|
+        =f.text_area :body, class: 'answer-form', placeholder: '入力してください', size: "100x5"
+        =f.submit "授ける", class: 'submit-btn'
+    -else
+      .rogin-anauns
+        %p.no-rogin-answer ログインしないと回答できないよ！！
+        %p.no-rogin-answer 新規登録してみんなを助けてあげよう！！
+        = link_to "※ログインはこちら", new_user_session_path, class: "post-answer-no-login"
+        = link_to "※新規登録はこちら", new_user_registration_path, class: "post-answer-no-login"
+      

@@ -1,0 +1,21 @@
+.content
+  .view 
+    %h4 質問投稿一覧 (全て)
+    %input{:onclick => "window.location.reload();", :type => "button", :value => "更新"}/
+  .questions
+    -@questions.each do |question|
+      .question
+        .question__text
+          %p.question-helpman \^∆^/help~!!
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title'
+        .question__user
+          -if user_signed_in?
+            -if question.user.id != current_user.id
+              = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{question.user.nickname}(あなたです)
+          -else
+            = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+    = paginate(@questions)
+  .question_btn
+    =link_to "助けを求める！!", new_question_path, class: 'rec'

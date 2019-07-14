@@ -21,3 +21,44 @@
   top: 60px;
   padding: 50px 20px;
 }
+
+.user_data {
+  margin-bottom: 70px;
+  padding: 50px 50px;
+  border: solid 3px tomato;
+  // background-color: white;
+  background-image: url(feather.jpg);
+  .user_data__name {
+    margin-bottom: 30px;
+    .o-name {
+    }
+    .user_data__name--nickname {
+      margin-top: 10px;
+      font-size: 250%;
+      font-weight: 600;
+      background: -webkit-linear-gradient(90deg, rgb(221, 255, 31), rgb(34, 240, 255));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .user_data__hitokoto {
+    padding-top: 20px;
+    border-top: solid 1px black;
+    .o-hitokoto {
+    }
+    .user_data__hitokoto--comment {
+      font-size: 150%;
+      margin-top: 10px;
+      margin-right: 180px;
+      font-weight: 550;
+      background: -webkit-linear-gradient(85deg, rgb(31, 109, 255), rgb(255, 38, 208));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .user_data__hitokoto--edit {
+      float: right;
+      position: relative;
+      bottom: 80px;
+    }
+  }
+}

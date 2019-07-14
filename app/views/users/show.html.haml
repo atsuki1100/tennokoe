@@ -17,6 +17,18 @@
       .user_data__question
         .user_data__question--nul 質問した数
         .user_data__question--count= @user.questions.count
+      .user_data__answer
+        .user_data__answer--nul 回答した数
+        .user_data__answer--count= @user.answers.count
+      .user_data__like
+        .user_data__like--nul いいねした数
+        .user_data__like--count= @user.likes.count
+      .user_data__liked
+        -liked_count = 0
+        -@user.answers.each do |answer|
+          -liked_count += answer.likes.count
+        .user_data__liked--nul いいねされた数
+        .user_data__liked--count= liked_count
     -@questions.each do |question|
       .question
         .question__text

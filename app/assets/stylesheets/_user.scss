@@ -67,7 +67,40 @@
     padding-top: 20px;
     border-top: solid 1px black;
     &--count {
-      font-size: 300%;
+      font-size: 200%;
+      font-weight: 550;
+      background: -webkit-linear-gradient(87deg, rgb(202, 26, 255), rgb(255, 29, 29));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__answer {
+    padding-top: 20px;
+    border-top: solid 1px black;
+    &--count {
+      font-size: 200%;
+      font-weight: 550;
+      background: -webkit-linear-gradient(87deg, rgb(202, 26, 255), rgb(255, 29, 29));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__like {
+    padding-top: 20px;
+    border-top: solid 1px black;
+    &--count {
+      font-size: 200%;
+      font-weight: 550;
+      background: -webkit-linear-gradient(87deg, rgb(202, 26, 255), rgb(255, 29, 29));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    } 
+  }
+  &__liked {
+    padding-top: 20px;
+    border-top: solid 1px black;
+    &--count {
+      font-size: 200%;
       font-weight: 550;
       background: -webkit-linear-gradient(87deg, rgb(202, 26, 255), rgb(255, 29, 29));
       -webkit-background-clip: text;

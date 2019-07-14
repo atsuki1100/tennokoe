@@ -2,6 +2,8 @@
   .view 
     %h4 #{@question.user.nickname}さんを助けてあげて！！
   .usersquestion__body
+    .nikoniko 
+      .nikoniko__mark ＼ (^ o ^) ／
     .questionsCategory
       %p.questionsCategory__nal カテゴリー： 
       =link_to "#{@question.category.name}", category_path(@question.category.id), class: "questionsCategory__text"

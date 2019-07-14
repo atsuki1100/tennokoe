@@ -36,6 +36,22 @@
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
   // background-image: url(feather.jpg);
+  .nikoniko {
+    text-align: center;
+    font-size: 300%;
+    width: 240px;
+    height: 240px;
+    border: solid 1px rgb(255, 238, 0);
+    background: linear-gradient(-520deg, yellow, rgb(247, 253, 255), yellow);
+    position: absolute;
+    right: -18px;
+    top: -50px;
+    border-radius: 200px;
+    &__mark {
+      position:relative;
+      top: 78px;
+    }
+  }
   .questionsCategory {
     &__nal {
       float: left;

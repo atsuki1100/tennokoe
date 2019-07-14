@@ -29,11 +29,11 @@
   border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   // background-color: white;
   background-image: url(feather.jpg);
-  .user_data__name {
+  &__name {
     margin-bottom: 30px;
     .o-name {
     }
-    .user_data__name--nickname {
+    &--nickname {
       margin-top: 10px;
       font-size: 250%;
       font-weight: 600;
@@ -42,12 +42,13 @@
       -webkit-text-fill-color: transparent;
     }
   }
-  .user_data__hitokoto {
+  &__hitokoto {
     padding-top: 20px;
+    margin-bottom: 30px;
     border-top: solid 1px black;
     .o-hitokoto {
     }
-    .user_data__hitokoto--comment {
+    &--comment {
       font-size: 150%;
       margin-top: 10px;
       margin-right: 180px;
@@ -56,10 +57,21 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .user_data__hitokoto--edit {
+    &--edit {
       float: right;
       position: relative;
       bottom: 80px;
+    }
+  }
+  &__question {
+    padding-top: 20px;
+    border-top: solid 1px black;
+    &--count {
+      font-size: 300%;
+      font-weight: 550;
+      background: -webkit-linear-gradient(87deg, rgb(202, 26, 255), rgb(255, 29, 29));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

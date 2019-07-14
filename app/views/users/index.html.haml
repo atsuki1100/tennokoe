@@ -16,6 +16,9 @@
           .user_data__hitokoto--comment 一言コメントはまだありません。
           -if @user.id == current_user.id
             .user_data__hitokoto--edit= link_to "ひとことを編集する", new_user_hitokoto_path(current_user.id), method: :get
+      .user_data__question
+        .user_data__question--nul 質問した数
+        .user_data__question--count= @user.questions.count
     -@questions.each do |question|
       .question
         .question__text

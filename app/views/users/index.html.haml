@@ -1,7 +1,21 @@
 .content
   .view 
-    %h4 #{@user.nickname}さんの質問一覧
+    %h4 #{@user.nickname}さんのページ
   .questions
+    .user_data
+      .user_data__name
+        .o-name お名前
+        .user_data__name--nickname #{@user.nickname}
+      .user_data__hitokoto
+        .o-hitokoto ひとことメッセージ
+        -if @user.hitokoto != nil
+          .user_data__hitokoto--comment= simple_format("#{@user.hitokoto.comment}")
+          -if @user.id == current_user.id
+            .user_data__hitokoto--edit= link_to "ひとことを編集する", edit_user_hitokoto_path(current_user.id, @user.hitokoto.id), method: :get
+        -else 
+          .user_data__hitokoto--comment 一言コメントはまだありません。
+          -if @user.id == current_user.id
+            .user_data__hitokoto--edit= link_to "ひとことを編集する", new_user_hitokoto_path(current_user.id), method: :get
     -@questions.each do |question|
       .question
         .question__text

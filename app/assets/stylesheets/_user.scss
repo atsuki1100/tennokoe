@@ -25,7 +25,8 @@
 .user_data {
   margin-bottom: 70px;
   padding: 50px 50px;
-  border: solid 3px tomato;
+  border: solid 6px rgb(247, 122, 122);
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
   // background-color: white;
   background-image: url(feather.jpg);
   .user_data__name {

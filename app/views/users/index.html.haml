@@ -27,7 +27,7 @@
         .user_data__question--count= @user.questions.count
       .user_data__answer
         .user_data__answer--nul 回答した数
-        .user_data__answer--count= @user.answers.count
+        =link_to "#{@user.answers.count}", user_answers_path(@user), class: 'user_data__answer--count'
       .user_data__like
         .user_data__like--nul いいねした数
         .user_data__like--count= @user.likes.count

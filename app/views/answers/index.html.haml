@@ -1,12 +1,12 @@
 .content
   .view 
-    %h4 #{@user.nickname}さんの回答した質問一覧
+    %h4 #{@user.nickname}さんの回答一覧
   .questions
-    -@answers.each do |answer|
+    -@answers.uniq.each do |answer|
       .question
         .question__text
           %p.question-helpman \^∆^/ﾀｽｹﾀ!!
-          =link_to simple_format("#{answer.question.title}"), question_path(answer.question.id), method: :get, class: 'question__title'
+          =link_to simple_format("#{answer.body}"), question_path(answer.question.id), method: :get, class: 'question__title'
         .question__user
           -if user_signed_in?
             -if answer.question.user.id != current_user.id

@@ -36,6 +36,32 @@
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
   // background-image: url(feather.jpg);
+  .nikoniko {
+    text-align: center;
+    font-size: 300%;
+    width: 240px;
+    height: 240px;
+    border: solid 1px rgb(255, 238, 0);
+    background: linear-gradient(-520deg, yellow, rgb(247, 253, 255), yellow);
+    position: absolute;
+    right: -18px;
+    top: -50px;
+    border-radius: 200px;
+
+    transform: rotate(0);
+    transition: transform .5s;
+
+    &__mark {
+      position:relative;
+      top: 78px;
+    }
+  }
+
+  .nikoniko:hover { 
+    transform: rotate(-720deg);
+    background: linear-gradient(-520deg, rgb(255, 8, 0), rgb(247, 253, 255), rgb(255, 8, 0));
+  }
+
   .questionsCategory {
     &__nal {
       float: left;
@@ -64,7 +90,8 @@
     }
     #post-font {
       color: rgb(110, 110, 110);
-      font-size: 110%;
+      font-size: 130%;
+      font-weight: 500;
       word-break: break-all;
     }
   }

@@ -9,8 +9,12 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.new(answer_params)
     @answer.user_id = current_user.id
-    @answer.save
-    redirect_back(fallback_location: root_path)
+    if @answer.save
+      respond_to do |format|
+        # format.html { redirect_back(fallback_location: root_path) }
+        format.json
+      end
+    end
   end
 
   private

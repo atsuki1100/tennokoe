@@ -1,5 +1,4 @@
-json.array! @likes do |like|
-  json.id like.id
-  json.user_id like.user_id
-  json.answer_id like.answer_id
-end
+json.user_name @answer.user.name
+json.title @answer.title
+json.body @answer.body
+json.result @answer.result

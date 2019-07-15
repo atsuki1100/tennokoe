@@ -1,12 +1,13 @@
-// $(function() {
-//   $(document).on('mouseover', '.nikoniko', function() {
-//     $('.nikoniko').animate({
-//       'left': '500px'
-//     },{
-//       'duration': 1000,
-//      });
-//   });
-// });
+$(function() {
+  $(document).on('click', '.nikoniko', function() {
+    $('.nikoniko').animate({
+      'top': '120px',
+      'right': '820px'
+    },{
+      'duration': 500,
+     });
+  });
+});
 
 $(function() {
   function buildHTML(answer) {

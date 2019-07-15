@@ -1,6 +1,9 @@
 class LikesController < ApplicationController
 
-  before_action :set_answer, onry: [:create, :destroy]
+  before_action :set_answer, onry: [:show :create, :destroy]
+
+  def show
+  end
 
   def create
     @like = Like.new(user_id: current_user.id, answer_id: params[:answer_id])

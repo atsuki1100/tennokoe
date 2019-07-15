@@ -8,6 +8,9 @@
       = link_to "ログイン", new_user_session_path, class: "post"
       = link_to "新規登録", new_user_registration_path, class: "post"
 
+  .ranking 
+    = link_to "人気の質問", ranking_index_path, class: 'ranking'
+
   -if @categorys.present?
     %ul.category-selection
       %p.category-nal みんなの質問カテゴリー

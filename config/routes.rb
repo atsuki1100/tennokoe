@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :answers, only: [:index]
     resources :hitokoto
   end
+
+  resources :ranking, only: [:index]
+
   resources :questions do
     resources :answers, only: [:create] do
       resources :likes, only: [:create, :destroy]

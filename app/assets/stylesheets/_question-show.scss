@@ -58,7 +58,8 @@
   }
 
   .nikoniko:hover { 
-    transform: rotate(-720deg); 
+    transform: rotate(-720deg);
+    background: linear-gradient(-520deg, rgb(255, 8, 0), rgb(247, 253, 255), rgb(255, 8, 0));
   }
 
   .questionsCategory {

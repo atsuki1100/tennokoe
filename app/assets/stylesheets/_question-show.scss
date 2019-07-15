@@ -36,6 +36,13 @@
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
   // background-image: url(feather.jpg);
+  .nikoniko-messe {
+    position: relative;
+    z-index: 6;
+    bottom: 20px;
+    left: 560px;
+    color: rgb(0, 0, 116);
+  }
   .nikoniko {
     text-align: center;
     font-size: 300%;

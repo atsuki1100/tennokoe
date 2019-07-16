@@ -242,7 +242,7 @@ header {
       }
       .question-helpman-3{
         width: 130px;
-        background-color: rgb(255, 25, 25);
+        background: linear-gradient(rgb(179, 107, 0), rgb(255, 255, 255), rgb(179, 107, 0));
         margin: 0 0;
         color: red;
         font-size: 200%;
@@ -254,9 +254,9 @@ header {
       }
       .question-helpman-10{
         width: 130px;
-        background-color: rgb(255, 25, 25);
+        background: linear-gradient(rgb(164, 0, 179), rgb(255, 255, 255), rgb(164, 0, 170));
         margin: 0 0;
-        color: rgb(255, 255, 255);
+        color: red;
         font-size: 200%;
         font-weight: 6;
         // transform: rotate(-10deg);
@@ -289,4 +289,35 @@ header {
       padding-top: 15px;
     }
   }
+}
+
+.yatta-man1 {
+  position: absolute;
+}
+.yatta-man2 {
+  position: absolute;
+}
+.yatta-man3 {
+  position: absolute;
+}
+.yatta-man4 {
+  position: absolute;
+}
+.yatta-man5 {
+  position: absolute;
+}
+.yatta-man6 {
+  position: absolute;
+}
+.yatta-man7 {
+  position: absolute;
+}
+.yatta-man8 {
+  position: absolute;
+}
+.yatta-man9 {
+  position: absolute;
+}
+.yatta-man10 {
+  position: absolute;
 }

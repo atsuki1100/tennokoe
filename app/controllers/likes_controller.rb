@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
 
-  before_action :set_answer, onry: [:show :create, :destroy]
+  before_action :set_answer, only: [:show, :create, :destroy]
 
   def show
   end

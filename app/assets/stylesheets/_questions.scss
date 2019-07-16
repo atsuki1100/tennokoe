@@ -180,11 +180,113 @@ header {
   }
 }
 
+
+
+// ランキング画面です
 .questions-ran {
   width: 100%;
   height: 100%;
   padding: 40px 60px 150px;
   position: relative;
   top: 96px;
-  background-color: rgb(255, 198, 190);
+  background-color: rgb(255, 86, 64);
+  // background-image: url(labit.jpg);
+  .rank {
+    .come.nal {
+      font-size: 70%;
+      margin-top: 2px;
+      float: right;
+    }
+  }
+  .question-rank {
+    position: relative;
+    text-decoration: none;
+    height: 200px;
+    margin: 30px auto 30px;
+    padding-left: 30px;
+    padding-right: 10px;
+    border-top: dashed 5px rgb(255, 213, 134);
+    border-bottom: dashed 5px rgb(255, 213, 134);
+    background-color: rgb(255, 226, 219);
+    overflow: scroll;
+    &__text {
+      word-break: break-all;
+      padding-top: 15px;
+      width: 800px;
+      height: 100%;
+      float: left;
+      border-right: ridge 5px rgb(255, 244, 214);
+      .question-helpman-1{
+        width: 130px;
+        background: linear-gradient(rgb(202, 202, 0), rgb(255, 255, 255), rgb(202, 202, 0));
+        margin: 0 0;
+        color: red;
+        font-size: 200%;
+        font-weight: 6;
+        // transform: rotate(-10deg);
+        position: relative;
+        left: -25px;
+        top: -15px;
+      }
+      .question-helpman-2{
+        width: 130px;
+        background: linear-gradient(rgb(120, 126, 134), rgb(255, 255, 255), rgb(120, 126, 134));
+        margin: 0 0;
+        color: red;
+        font-size: 200%;
+        font-weight: 6;
+        // transform: rotate(-10deg);
+        position: relative;
+        left: -25px;
+        top: -15px;
+      }
+      .question-helpman-3{
+        width: 130px;
+        background-color: rgb(255, 25, 25);
+        margin: 0 0;
+        color: red;
+        font-size: 200%;
+        font-weight: 6;
+        // transform: rotate(-10deg);
+        position: relative;
+        left: -25px;
+        top: -15px;
+      }
+      .question-helpman-10{
+        width: 130px;
+        background-color: rgb(255, 25, 25);
+        margin: 0 0;
+        color: rgb(255, 255, 255);
+        font-size: 200%;
+        font-weight: 6;
+        // transform: rotate(-10deg);
+        position: relative;
+        left: -25px;
+        top: -15px;
+      }
+      .question-helpman{
+        width: 130px;
+        background-color: rgb(255, 25, 25);
+        margin: 0 0;
+        color: rgb(255, 255, 255);
+        font-size: 200%;
+        font-weight: 6;
+        // transform: rotate(-10deg);
+        position: relative;
+        left: -25px;
+        top: -15px;
+      }
+      .question__title {
+        color: rgb(110, 110, 110);
+        font-size: 120%;
+        font-weight: 450;
+      }
+    }
+    &__user {
+      float: right;
+      width: 160px;
+      word-break: break-all;
+      padding-top: 15px;
+    }
+  }
 }

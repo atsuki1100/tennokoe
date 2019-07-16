@@ -38,10 +38,10 @@
   // background-image: url(feather.jpg);
   .nikoniko-messe {
     position: relative;
-    z-index: 6;
     bottom: 20px;
     left: 480px;
     color: rgb(0, 0, 116);
+    margin-right: 200px;
   }
   .nikoniko {
     text-align: center;
@@ -51,6 +51,7 @@
     border: solid 1px rgb(255, 238, 0);
     background: linear-gradient(-520deg, yellow, rgb(247, 253, 255), yellow);
     position: absolute;
+    // background-image: url(megami.jpg);
     right: -18px;
     top: -50px;
     border-radius: 200px;

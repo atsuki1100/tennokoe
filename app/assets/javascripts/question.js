@@ -12,6 +12,10 @@ $(function() {
     $('.nikoniko').css("border-radius", "1000px")
     $('.nikoniko').css("font-size", "700%")
     $('.nikoniko').css("z-index", "4")
+
+    $('.answer-form').hide();
+    $('.submit-btn').hide();
+
     while(num < 100){
       $('.nikoniko')
         .animate({'top': '120px','left': '60px'},{'duration': 200,});
@@ -95,3 +99,43 @@ $(function() {
       })
     })
  })
+
+$(function() {
+  $('#all-btn').on('click', function(e) {
+    e.preventDefault();
+    $('.question-rank').hide();
+    $('.question-rank#all').show();
+    $('.ranking_btn').css("background-color", "white")
+    $('#all-btn').css("background-color", "orange")
+  })
+});
+
+$(function() {
+  $('#day-btn').on('click', function(e) {
+    e.preventDefault();
+    $('.question-rank').hide();
+    $('.question-rank#day').show();
+    $('.ranking_btn').css("background-color", "white")
+    $('#day-btn').css("background-color", "orange")
+  })
+});
+
+$(function() {
+  $('#week-btn').on('click', function(e) {
+    e.preventDefault();
+    $('.question-rank').hide();
+    $('.question-rank#week').show();
+    $('.ranking_btn').css("background-color", "white")
+    $('#week-btn').css("background-color", "orange")
+  })
+});
+
+$(function() {
+  $('#month-btn').on('click', function(e) {
+    e.preventDefault();
+    $('.question-rank').hide();
+    $('.question-rank#month').show();
+    $('.ranking_btn').css("background-color", "white")
+    $('#month-btn').css("background-color", "orange")
+  })
+});

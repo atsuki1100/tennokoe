@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function () {
 $(function() {
   $(document).on('click', '.nikoniko', function() {
     var num = 0
@@ -138,4 +139,5 @@ $(function() {
     $('.ranking_btn').css("background-color", "white")
     $('#month-btn').css("background-color", "orange")
   })
+});
 });

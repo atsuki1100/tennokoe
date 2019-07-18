@@ -9,6 +9,15 @@
   top: 60px;
   height: 100%;
   background-color: rgb(255, 255, 230);
+  .scroll-answer {
+    width: 100px;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(197, 147, 255, 0.918);
+    color: black;
+    top: 90px;
+    left: 100px;
+  }
   .view {
     font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
     padding: 30px;
@@ -36,6 +45,13 @@
   border: ridge 20px rgb(244, 255, 83);
   background-color: rgb(255, 244, 226);
   // background-image: url(feather.jpg);
+  .nikoniko-messe {
+    position: relative;
+    bottom: 20px;
+    left: 480px;
+    color: rgb(0, 0, 116);
+    margin-right: 200px;
+  }
   .nikoniko {
     text-align: center;
     font-size: 300%;
@@ -44,6 +60,7 @@
     border: solid 1px rgb(255, 238, 0);
     background: linear-gradient(-520deg, yellow, rgb(247, 253, 255), yellow);
     position: absolute;
+    // background-image: url(megami.jpg);
     right: -18px;
     top: -50px;
     border-radius: 200px;

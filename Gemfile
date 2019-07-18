@@ -69,3 +69,7 @@ gem 'bootstrap'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem "font-awesome-rails"
+
+group :production do
+  gem 'pg'
+end

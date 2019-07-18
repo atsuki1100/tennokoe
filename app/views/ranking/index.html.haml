@@ -1,0 +1,147 @@
+.content
+  .view
+    %h4 🔥🔥人気の質問！！🔥🔥
+  .questions-ran
+    .rank
+      %button.ranking_btn#day-btn Day
+      %button.ranking_btn#week-btn Week
+      %button.ranking_btn#month-btn Month
+      %button.ranking_btn#all-btn All
+      %p.come.nal ※コメント数が多い順となってます。
+    -@question_ranking.each do |question|
+      .question-rank#all
+        .question-rank__text
+          -if @num == 1
+            %p.question-helpman-1 👑第#{@num}!!
+            -# .yatta-man1 😍
+            -# .yatta-man2 😇
+            -# .yatta-man3 ⭐️
+            -# .yatta-man4 ⭐️
+            -# .yatta-man5 ⭐️
+            -# .yatta-man6 ⭐️
+            -# .yatta-man7 ⭐️
+            -# .yatta-man8 ⭐️
+            -# .yatta-man9 ⭐️
+            -# .yatta-man10 ⭐️
+          -elsif @num == 2
+            %p.question-helpman-2 🌊第#{@num}!!
+          -elsif @num == 3
+            %p.question-helpman-3 ⚰️第#{@num}!!
+          -elsif @num >= 4 && @num <= 10
+            %p.question-helpman-10 😈第#{@num}!!
+          -else
+            %p.question-helpman 🤪第#{@num}!!
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title'
+        .question-rank__user
+          -if user_signed_in?
+            -if question.user.id != current_user.id
+              = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{question.user.nickname}(あなたです)
+          -else
+            = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+        -@num += 1
+    
+    -@question_ranking_today.each do |question|
+      .question-rank#day
+        .question-rank__text
+          -if @numday == 1
+            %p.question-helpman-1 👑第#{@numday}!!
+            -# .yatta-man1 😍
+            -# .yatta-man2 😇
+            -# .yatta-man3 ⭐️
+            -# .yatta-man4 ⭐️
+            -# .yatta-man5 ⭐️
+            -# .yatta-man6 ⭐️
+            -# .yatta-man7 ⭐️
+            -# .yatta-man8 ⭐️
+            -# .yatta-man9 ⭐️
+            -# .yatta-man10 ⭐️
+          -elsif @numday == 2
+            %p.question-helpman-2 🌊第#{@numday}!!
+          -elsif @numday == 3
+            %p.question-helpman-3 ⚰️第#{@numday}!!
+          -elsif @numday >= 4 && @numweek <= 10
+            %p.question-helpman-10 😈第#{@numday}!!
+          -else
+            %p.question-helpman 🤪第#{@numday}!!
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title'
+        .question-rank__user
+          -if user_signed_in?
+            -if question.user.id != current_user.id
+              = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{question.user.nickname}(あなたです)
+          -else
+            = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+      -@numday += 1
+    -@question_ranking_week.each do |question|
+      .question-rank#week
+        .question-rank__text
+          -if @numweek == 1
+            %p.question-helpman-1 👑第#{@numweek}!!
+            -# .yatta-man1 😍
+            -# .yatta-man2 😇
+            -# .yatta-man3 ⭐️
+            -# .yatta-man4 ⭐️
+            -# .yatta-man5 ⭐️
+            -# .yatta-man6 ⭐️
+            -# .yatta-man7 ⭐️
+            -# .yatta-man8 ⭐️
+            -# .yatta-man9 ⭐️
+            -# .yatta-man10 ⭐️
+          -elsif @numweek == 2
+            %p.question-helpman-2 🌊第#{@numweek}!!
+          -elsif @numweek == 3
+            %p.question-helpman-3 ⚰️第#{@numweek}!!
+          -elsif @numweek >= 4 && @numweek <= 10
+            %p.question-helpman-10 😈第#{@numweek}!!
+          -else
+            %p.question-helpman 🤪第#{@numweek}!!
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title'
+        .question-rank__user
+          -if user_signed_in?
+            -if question.user.id != current_user.id
+              = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{question.user.nickname}(あなたです)
+          -else
+            = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+      -@numweek += 1
+    -@question_ranking_month.each do |question|
+      .question-rank#month
+        .question-rank__text
+          -if @nummonth == 1
+            %p.question-helpman-1 👑第#{@nummonth}!!
+            -# .yatta-man1 😍
+            -# .yatta-man2 😇
+            -# .yatta-man3 ⭐️
+            -# .yatta-man4 ⭐️
+            -# .yatta-man5 ⭐️
+            -# .yatta-man6 ⭐️
+            -# .yatta-man7 ⭐️
+            -# .yatta-man8 ⭐️
+            -# .yatta-man9 ⭐️
+            -# .yatta-man10 ⭐️
+          -elsif @nummonth == 2
+            %p.question-helpman-2 🌊第#{@nummonth}!!
+          -elsif @nummonth == 3
+            %p.question-helpman-3 ⚰️第#{@nummonth}!!
+          -elsif @nummonth >= 4 && @nummonth <= 10
+            %p.question-helpman-10 😈第#{@nummonth}!!
+          -else
+            %p.question-helpman 🤪第#{@nummonth}!!
+          =link_to simple_format("#{question.title}"), question_path(question.id), method: :get, class: 'question__title'
+        .question-rank__user
+          -if user_signed_in?
+            -if question.user.id != current_user.id
+              = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+            -else 
+              %p.que-myname #{question.user.nickname}(あなたです)
+          -else
+            = link_to "#{question.user.nickname}", users_path(question.user.id), class: 'myname'
+      -@nummonth += 1
+    -# = paginate(@question_ranking)
+  .question_btn
+    =link_to "助けを求める！!", new_question_path, class: 'rec'
+      

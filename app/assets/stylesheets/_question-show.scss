@@ -9,6 +9,15 @@
   top: 60px;
   height: 100%;
   background-color: rgb(255, 255, 230);
+  .scroll-answer {
+    width: 100px;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(197, 147, 255, 0.918);
+    color: black;
+    top: 90px;
+    left: 100px;
+  }
   .view {
     font-family: "游教科書体 横用","YuKyokasho Yoko"; font-weight: bold;
     padding: 30px;

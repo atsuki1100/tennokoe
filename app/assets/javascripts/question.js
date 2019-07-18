@@ -12,10 +12,11 @@ $(function() {
     $('.nikoniko').css("height", "580px")
     $('.nikoniko').css("border-radius", "1000px")
     $('.nikoniko').css("font-size", "700%")
-    $('.nikoniko').css("z-index", "4")
+    $('.nikoniko').css("z-index", "200")
 
     $('.answer-form').hide();
     $('.submit-btn').hide();
+    $('.scroll-answer').hide();
 
     while(num < 100){
       $('.nikoniko')
